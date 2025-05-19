@@ -32,12 +32,12 @@ group by category;
 #(payment in installment is greater then 1)
 select count(payment_installments)
 from payments
-where payment_installments >=1;
+where payment_installments >1;
 
 select count(payment_installments)
 from payments;
           # or
-select (sum(case when payment_installments >=1 then 1 else 0 end))/count(*)*100
+select (sum(case when payment_installments >1 then 1 else 0 end))/count(*)*100
 from payments;
 
 #5. Count the number of customers from each state.
